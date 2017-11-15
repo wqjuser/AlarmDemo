@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 sender = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
                 alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 Log.w("onClick: ", String.valueOf(c.getTimeInMillis()));
-                alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), INTERVAL_DAY,sender);
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),sender);
                 Toast.makeText(MainActivity.this, "定时提醒闹钟设置成功", Toast.LENGTH_SHORT).show();
             }
         });
